@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import ColorBox from './components/ColorBox';
 import { SafeAreaView } from 'react-native-web';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 const COLORS = [
@@ -25,13 +26,15 @@ const COLORS = [
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <FlatList style={styles.container}
-        data={COLORS}
-        keyExtractor={item => item.colorName} 
-        renderItem={ ({item}) =>(<ColorBox colorName={item.colorName} hexCode={item.hexCode}/>
-        )}/>
-    </SafeAreaView>
+    <NavigationContainer>
+      <SafeAreaView>
+        <FlatList style={styles.container}
+          data={COLORS}
+          keyExtractor={item => item.colorName} 
+          renderItem={ ({item}) =>(<ColorBox colorName={item.colorName} hexCode={item.hexCode}/>
+          )}/>
+      </SafeAreaView>
+    </NavigationContainer>
 
   );
 }
