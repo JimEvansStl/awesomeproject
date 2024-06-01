@@ -37,7 +37,9 @@ const ColorPalette = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingTop: 10,
+    backgroundColor: 'white',
   },
   heading: {
     fontSize: 18,
